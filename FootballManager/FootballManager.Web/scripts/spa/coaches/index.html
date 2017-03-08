@@ -1,0 +1,55 @@
+﻿<hr />
+<div>
+    <angucomplete-alt id="coaches"
+                      placeholder="Search coaches"
+                      pause="200"
+                      selected-object="getCoachData"
+                      remote-url="/api/coaches/list/"
+                      remote-url-data-field=""
+                      title-field="Name"
+                      input-class="form-control form-control-small"
+                      match-class="red"
+                      text-searching="Searching coaches..."
+                      text-no-results="No coaches found matching your filter." />
+</div>
+<hr />
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" data-target="#personalData">Personal Data</a></li>
+    <li><a data-toggle="tab" data-target="#teams">Teams</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="personalData" class="tab-pane fade in active">
+	    <img style="margin-bottom: 0.79em" ng-src="../../../Content/images/coaches/{{coach.PictureUrl}}" alt="" 
+			height="220" width="220">
+        <p><span style="font-weight: bold;">Name: </span>{{coach.FirstName}} </p>
+        <p><span style="font-weight: bold;">Surname: </span>{{coach.Surname}}</p>
+        <p><span style="font-weight: bold;">Date of birth:</span> {{coach.BirthDate | limitTo: 10}}</p>
+    </div>
+    <div id="teams" class="tab-pane fade">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Coach's teams</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Team Name</th>
+                        <th>Stadium</th>
+                        <th>Current Coach</th>
+                    </tr>
+                    <tr ng-repeat="team in coach.Teams">
+                        <td width="33%">
+                            <img ng-src="../../../Content/images/teams/{{team.LogoUrl}}" height="18" width="18">
+                            <a ng-href="#/team/{{team.Id}}" style="color: black;">{{team.Name}}</a>
+                        </td>
+                        <td width="33%"><a ng-href="#/stadium/{{team.Stadium.Key}}" style="color:black;">{{team.Stadium.Value}}</a></td>
+                        <td width="34%"><a ng-href="#/coach/{{team.Coach.Key}}" style="color: black;">
+                            {{team.Coach.Value}}</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+﻿<hr />
+<div>
+    <angucomplete-alt id="stadiums"
+                      placeholder="Search stadiums"
+                      pause="200"
+                      selected-object="selectedStadium"
+                      remote-url="/api/stadium/list/"
+                      remote-url-data-field=""
+                      title-field="Name"
+                      input-class="form-control form-control-small"
+                      match-class="red"
+                      text-searching="Searching stadiums.."
+                      text-no-results="No stadiums found matching your filter." />
+</div>
+<hr />
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" data-target="#details">Details</a></li>
+    <li><a data-toggle="tab" data-target="#teams">Teams</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="details" class="tab-pane fade in active">
+        <img style="margin-bottom: 0.79em" ng-src="../../../Content/images/stadiums/{{stadium.PictureUrl}}" alt="" width="220" height="220">
+        <p><span style="font-weight: bold;">Name: </span>{{stadium.Name}} </p>
+        <p><span style="font-weight: bold;">Capacity: </span> {{stadium.Capacity}}</p>
+        <p><span style="font-weight: bold;">City: </span>{{stadium.Address.City}} </p>
+        <p><span style="font-weight: bold;">Zipcode: </span>{{stadium.Address.Zipcode}} </p>
+        <p><span style="font-weight: bold;">Street: </span>{{stadium.Address.Street}} </p>
+        <p><span style="font-weight: bold;">Number: </span>{{stadium.Address.Number}} </p>
+    </div>
+    <div id="teams" class="tab-pane fade">
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr ng-repeat="team in stadium.Teams">
+                <td><a ng-href="#/team/{{team.Id}}" style="color:black">{{team.Name}}</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+

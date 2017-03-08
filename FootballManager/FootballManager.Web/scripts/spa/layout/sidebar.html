@@ -1,0 +1,20 @@
+﻿<div id="sidebar" class="sidebar-offcanvas" style="background-color:#465062">
+    <div class="col-md-12">
+        <h3></h3>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="nav-divider"></li>
+            <li class=""><a ng-href="#/">Home<i class="fa fa-home fa-fw pull-right"></i></a></li>
+            <li class="nav-divider"></li>
+            <li><a ng-href="#/season/">Seasons<i class="fa fa-calendar fa-fw pull-right"></i></a></li>
+            <li><a ng-href="#/team/">Teams<i class="fa fa-users fa-fw pull-right"></i></a></li>
+            <li><a ng-href="#/player/">Players<i class="fa fa-user fa-fw pull-right"></i></a></li>
+            <li><a ng-href="#/coaches/">Coaches<i class="fa fa-user fa-fw pull-right"></i></a></li>
+            <li><a ng-href="#/referees/">Referees<i class="fa fa-wheelchair fa-fw pull-right"></i></a></li>
+            <li><a ng-href="#/stadium/">Stadiums<i class="fa fa-building-o fa-fw pull-right"></i></a></li>
+	        <li class="nav-divider"></li>
+			<!--<li><a ng-href="#/passreset" ng-show="userData.canChangePassword">Change Password<i class="fa fa-leanpub fa-fw pull-right"></i></a></li>-->
+            <li><a ng-href="#/login" ng-if="!userData.isUserLoggedIn">Login<i class="fa fa-sign-in fa-fw pull-right"></i></a></li>
+            <li><button type="button" class="btn btn-danger btn-sm" ng-click="logout();" ng-if="userData.isUserLoggedIn">Logout<i class="fa fa-sign-out fa-fw pull-right"></i></button></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿<hr />
+<div class="row">
+    <div class="col-md-8">
+        <div class="panel panel-primary" id="panelPreviousMatches">
+            <div class="panel-heading">
+                <h3 class="panel-title">Previous round</h3>
+            </div>
+
+            <div class="panel-body">
+                <div ng-if="loadingPreviousMatches">
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4">
+                        <i class="fa fa-refresh fa-5x fa-spin"></i> <label class="label label-primary">Loading matches...</label>
+                    </div>
+                    <div class="col-xs-4"></div>
+                </div>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Home Team</th>
+                        <th>Away Team</th>
+                        <th>Date</th>
+                        <th>Stadium</th>
+                        <th>Home score</th>
+                        <th>Away score</th>
+                        <th>Rating</th>
+                    </tr>
+                    <tr ng-repeat="match in previousRoundMatches" ng-click="redirectToMatch(match)">
+                        <td>{{match.HomeTeamName}}</td>
+                        <td>{{match.AwayTeamName}}</td>
+                        <td>{{match.Date | limitTo: 10}}</td>
+                        <td>{{match.Stadium.Name}}</td>
+                        <td>{{match.HomeGoalsCount}}</td>
+                        <td>{{match.AwayGoalsCount}}</td>
+                        <td style="min-width: 150px"><span display-component-rating="{{match.AverageRating}}"></span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-primary" id="panelNextMatches">
+            <div class="panel-heading">
+                <h3 class="panel-title">Next round</h3>
+            </div>
+
+            <div class="panel-body">
+                <div ng-if="loadingMatches">
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4">
+                        <i class="fa fa-refresh fa-5x fa-spin"></i> <label class="label label-primary">Loading matches...</label>
+                    </div>
+                    <div class="col-xs-4"></div>
+                </div>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Home Team</th>
+                        <th>Away Team</th>
+                        <th>Date</th>
+                        <th>Stadium</th>
+                    </tr>
+                <tr ng-repeat="match in nextRoundMatches" ng-click="redirectToMatch(match)">
+                    <td>{{match.HomeTeamName}}</td>
+                    <td>{{match.AwayTeamName}}</td>
+                    <td>{{match.Date | limitTo: 10}}</td>
+                    <td>{{match.Stadium.Name}}</td>
+                </tr>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>

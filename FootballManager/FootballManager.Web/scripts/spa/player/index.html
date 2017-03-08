@@ -1,0 +1,47 @@
+﻿<hr />
+<div>
+    <angucomplete-alt id="teams"
+                      placeholder="Search player"
+                      pause="200"
+                      selected-object="selectedPlayer"
+                      remote-url="/api/player/list/"
+                      remote-url-data-field=""
+                      title-field="Name"
+                      input-class="form-control form-control-small"
+                      match-class="red"
+                      text-searching="Searching players.."
+                      text-no-results="No players found matching your filter." />
+</div>
+<hr />
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" data-target="#details">Details</a></li>
+    <li><a data-toggle="tab" data-target="#goals">Goals</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="details" class="tab-pane fade in active">
+        <img style="margin-bottom: 0.79em" ng-src="../../../Content/images/players/{{player.Team.Value}}/{{player.PictureUrl}}" alt="">
+        <p><span style="font-weight: bold;">Name: </span>{{player.FirstName}} </p>
+        <p><span style="font-weight: bold;">Surname: </span>{{player.Surname}} </p>
+        <p><span style="font-weight: bold;">Birth date:</span> {{player.BirthDate | limitTo: 10}}</p>
+        <p><span style="font-weight: bold;">Team: </span><a ng-href="#/team/{{player.Team.Key}}" style="color:black">{{player.Team.Value}}</a></p>
+    </div>
+    <div id="goals" class="tab-pane fade">
+        <table class="table table-striped">
+            <tr>
+                <th>Home team</th>
+                <th>Away team</th>
+                <th>Type</th>
+                <th>Time</th>
+            </tr>
+            <tr ng-repeat="goal in player.Goals">
+                <td>{{goal.HomeTeam}}</td>
+                <td>{{goal.AwayTeam}}</td>
+                <td>{{goal.Type}}</td>
+                <td>{{goal.Time}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+

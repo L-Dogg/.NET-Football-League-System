@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FootballManager.Domain.Entity.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FootballManager.Domain.Entity.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="GoalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Own" />
+      <xs:enumeration value="Penalty" />
+      <xs:enumeration value="Freekick" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GoalType" nillable="true" type="tns:GoalType" />
+</xs:schema>

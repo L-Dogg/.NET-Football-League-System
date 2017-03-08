@@ -1,0 +1,72 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FootballManager.Presentation.Views"
+             xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls" x:Class="FootballManager.Presentation.Views.MainMenu"
+             xmlns:mvvm="http://prismlibrary.com/"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="918"
+             mvvm:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <Style x:Key="LargeTileStyle" TargetType="Custom:Tile">
+            <Setter Property="Width" Value="285" />
+            <Setter Property="Height" Value="176" />
+            <Setter Property="TitleFontSize" Value="10" />
+        </Style>
+
+        <Style x:Key="SmallTileStyle" TargetType="Custom:Tile">
+            <Setter Property="Width" Value="139.5" />
+            <Setter Property="Height" Value="176" />
+            <Setter Property="TitleFontSize" Value="10" />
+        </Style>
+    </UserControl.Resources>
+    <!--<Grid Margin="-353,0,0,-343">-->
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+		<WrapPanel Orientation="Horizontal" Margin="20,20,20,20">
+            <Custom:Tile x:Name="newTeam" Title="Add new team" Style="{StaticResource LargeTileStyle}" Background="Teal" Command="{Binding AddTeamCommand}">
+                <Image Source="/Icons/team-add.png"  Opacity="0.25"  Stretch="Uniform"/>
+            </Custom:Tile>
+                <Custom:Tile x:Name="editTeam" Title="Edit existing team" Style="{StaticResource LargeTileStyle}" Command="{Binding EditTeamCommand}">
+				<Image Source="/Icons/team-edit.png"  Opacity="0.25"  Stretch="Uniform"/>
+			</Custom:Tile>
+			<Custom:Tile x:Name="newPlayer" Title="Add new player" Style="{StaticResource LargeTileStyle}" Background="Green" Command="{Binding AddPlayerCommand}">
+				<Image Source="/Icons/footballer-add.png"  Opacity="0.25"  Stretch="Uniform"/>
+            </Custom:Tile>
+			<Custom:Tile x:Name="editPlayer" Title="Edit existing player" Style="{StaticResource LargeTileStyle}" Background="#D2691E" Command="{Binding EditPlayerCommand}">
+				<Image Source="/Icons/footballer-edit.png"  Opacity="0.25"  Stretch="Uniform"/>
+			</Custom:Tile>
+                <Custom:Tile x:Name="newCoach" Title="Add new coach" Style="{StaticResource LargeTileStyle}" Background="#1E90FF" Command="{Binding AddCoachCommand}">
+				<Image Source="/Icons/coach-add.png"  Opacity="0.25"  Stretch="Uniform"/>
+            </Custom:Tile>
+            <Custom:Tile x:Name="editCoach" Title="Edit existing coach" Style="{StaticResource LargeTileStyle}" Background="#1E90FF" Command="{Binding EditCoachCommand}">
+				<Image Source="/Icons/coach-edit.png"  Opacity="0.25"  Stretch="Uniform"/>
+			</Custom:Tile>
+                <Custom:Tile x:Name="addStadium" Title="Add new stadium" Style="{StaticResource LargeTileStyle}" Background="Green" Command="{Binding AddStadiumCommand}">
+				<Image Source="/Icons/stadium-add.png" Opacity="0.25" Stretch="Uniform"/>
+			</Custom:Tile>
+			<Custom:Tile x:Name="editStadium" Title="Edit existing stadium" Style="{StaticResource LargeTileStyle}" Background="Teal" Command="{Binding EditStadiumCommand}">
+				<Image Source="/Icons/stadium-edit.png" Opacity="0.25" Stretch="Uniform"/>
+			</Custom:Tile>
+                <Custom:Tile x:Name="addSeason" Title="Add new season" Style="{StaticResource LargeTileStyle}" Background="#D2691E" Command="{Binding AddSeasonCommand}">
+				<Image Source="/Icons/season-add.png" Opacity="0.25" Stretch="Uniform"/>
+			</Custom:Tile>
+			<Custom:Tile x:Name="editSeason" Title="Edit existing season" Style="{StaticResource LargeTileStyle}" Command="{Binding EditSeasonCommand}">
+				<Image Source="/Icons/season-edit.png" Opacity="0.25" Stretch="Uniform"/>
+			</Custom:Tile>
+                <Custom:Tile x:Name="fixtures" Title="Generate fixtures" Style="{StaticResource LargeTileStyle}" Background="#1E90FF" Command="{Binding GenerateFixturesCommand}">
+				<Image Source="/Icons/fixtures-generate.png"  Opacity="0.25"  Stretch="Uniform"/>
+			</Custom:Tile>
+                <Custom:Tile x:Name="newReferee" Title="Add new referee" Style="{StaticResource SmallTileStyle}" Background="DarkViolet" Command="{Binding AddRefereeCommand}">
+				<Image Source="/Icons/referee-add.png"  Opacity="0.25"  Stretch="Uniform"/>
+			</Custom:Tile>
+            <Custom:Tile x:Name="editReferee" Title="Edit existing referee" Style="{StaticResource SmallTileStyle}" Background="Teal" Command="{Binding EditRefereeCommand}">
+				<Image Source="/Icons/referee-edit.png"  Opacity="0.25"  Stretch="Uniform"/>
+			</Custom:Tile>
+        </WrapPanel>
+    </Grid>
+    </ScrollViewer>
+    <!--</Grid>-->
+</UserControl>

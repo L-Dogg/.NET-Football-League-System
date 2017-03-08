@@ -1,0 +1,84 @@
+﻿<hr />
+<div>
+    <angucomplete-alt id="teams"
+                      placeholder="Search teams"
+                      pause="200"
+                      selected-object="selectedTeam"
+                      remote-url="/api/team/list/"
+                      remote-url-data-field=""
+                      title-field="Name"
+                      input-class="form-control form-control-small"
+                      match-class="red"
+                      text-searching="Searching teams.."
+                      text-no-results="No teams found matching your filter." />
+</div>
+<hr />
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" data-target="#details">Details</a></li>
+    <li><a data-toggle="tab" data-target="#players">Players</a></li>
+    <li><a data-toggle="tab" data-target="#matches">Matches</a></li>
+    <li><a data-toggle="tab" data-target="#seasons">Seasons</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="details" class="tab-pane fade in active">
+	    <img style="margin-bottom: 0.79em" ng-src="../../../Content/images/teams/{{team.LogoUrl}}" alt=""
+			 height="200" width="200">
+        <p><span style="font-weight: bold;">Name: </span>{{team.Name}} </p>
+        <p><span style="font-weight: bold;">Founded:</span> {{team.Founded | limitTo: 10}}</p>
+        <p><span style="font-weight: bold;">City: </span>{{team.Address.City}} </p>
+        <p><span style="font-weight: bold;">Zipcode: </span>{{team.Address.Zipcode}} </p>
+        <p><span style="font-weight: bold;">Street: </span>{{team.Address.Street}} </p>
+        <p><span style="font-weight: bold;">Number: </span>{{team.Address.Number}} </p>
+        <p><span style="font-weight: bold;">Coach: </span><a ng-href="#/coaches/{{team.Coach.Key}}" style="color:black">{{team.Coach.Value}}</a></p>
+        <p><span style="font-weight: bold;">Stadium: </span><a ng-href="#/stadium/{{team.Stadium.Key}}" style="color:black">{{team.Stadium.Value}}</a></p>
+    </div>
+    <div id="players" class="tab-pane fade">
+        <table class="table table-striped">
+            <tr>
+                <th>First name</th>
+                <th>Surname</th>
+                <th>Birth date</th>
+            </tr>
+            <tr ng-repeat="player in team.Players" ng-click="redirectToPlayer(player)">
+                <td>{{player.FirstName}}</td>
+                <td>{{player.Surname}}</td>
+                <td>{{player.BirthDate | limitTo: 10}}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="seasons" class="tab-pane fade">
+        <table class="table table-striped">
+            <tr>
+                <th>Season</th>
+            </tr>
+            <tr ng-repeat="season in team.Seasons">
+                <td><a ng-href="#/season/{{season.Key}}" style="color:black;">{{season.Value}}</a></td>
+            </tr>
+        </table>
+    </div>
+    <div id="matches" class="tab-pane fade">
+        <table class="table table-striped">
+            <tr>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Date</th>
+                <th>Stadium</th>
+                <th>Home score</th>
+                <th>Away score</th>
+                <th>Rating</th>
+            </tr>
+            <tr ng-repeat="match in team.Matches" ng-click="redirectToMatch(match)">
+                <td width="18%">{{match.HomeTeamName}}</td>
+                <td width="18%">{{match.AwayTeamName}}</td>
+                <td width="14%">{{match.Date | limitTo: 10}}</td>
+                <td width="18%">{{match.Stadium.Name}}</td>
+                <td width="10%">{{match.HomeGoalsCount}}</td>
+                <td width="10%">{{match.AwayGoalsCount}}</td>
+                <td width="12%" style="min-width: 150px"><span display-component-rating="{{match.AverageRating}}"></span></td>
+            </tr>
+        </table>
+    </div>
+</div>
+        

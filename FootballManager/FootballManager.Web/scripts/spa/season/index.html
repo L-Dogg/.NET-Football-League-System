@@ -1,0 +1,91 @@
+﻿<hr/>
+    <div>
+        <angucomplete-alt id="seasons"
+                          placeholder="Search seasons"
+                          pause="200"
+                          selected-object="selectedSeason"
+                          remote-url="/api/season/list/"
+                          remote-url-data-field=""
+                          title-field="Name"
+                          input-class="form-control form-control-small"
+                          match-class="red"
+                          text-searching="Searching seasons.."
+                          text-no-results="No seasons found matching your filter." />
+    </div>
+
+<hr/>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" data-target="#table">Table</a></li>
+    <li><a data-toggle="tab" data-target="#scorers">Scorers table</a></li>
+    <li><a data-toggle="tab"data-target="#schedule">Schedule</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="table" class="tab-pane fade in active">
+        <table class="table table-striped">
+            <tr>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Goals scored</th>
+                <th>Goals conceded</th>
+                <th>Points</th>
+            </tr>
+            <tr ng-repeat="table in season.Tables">
+                <td>{{$index + 1}}</td>
+                <td><a ng-href="#/team/{{table.Id}}" style="color:black;">{{table.Name}}</a></td>
+                <td>{{table.GoalsScored}}</td>
+                <td>{{table.GoalsConceded}}</td>
+                <td>{{table.Points}}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="scorers" class="tab-pane fade">
+        <table class="table table-striped">
+            <tr>
+                <th>Position</th>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Goals</th>
+            </tr>
+            <tr ng-repeat="player in season.ScorersTable">
+                <td>{{$index + 1}}</td>
+                <td><a ng-href="#/player/{{player.Key.Id}}" style="color:black">{{player.Key.Name}}</a></td>
+                <td>{{player.Key.Team}}</td>
+                <td>{{player.Value}}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="schedule" class="tab-pane fade">
+        <div ng-repeat="round in season.Schedule">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Round {{$index + 1}}</h3>
+                </div>
+
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Home Team</th>
+                            <th>Away Team</th>
+                            <th>Date</th>
+                            <th>Stadium</th>
+                            <th>Home score</th>
+                            <th>Away score</th>
+                            <th>Rating</th>
+                        </tr>
+                        <tr ng-repeat="match in round" ng-click="redirectToMatch(match)">
+                            <td width="18%">{{match.HomeTeamName}}</td>
+                            <td width="18%">{{match.AwayTeamName}}</td>
+                            <td width="14%">{{match.Date | limitTo: 10}}</td>
+                            <td width="18%">{{match.Stadium.Name}}</td>
+                            <td width="10%">{{match.HomeGoalsCount}}</td>
+                            <td width="10%">{{match.AwayGoalsCount}}</td>
+                            <td width="12%" style="min-width: 150px"><span display-component-rating="{{match.AverageRating}}"></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,130 @@
+﻿<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '247733828993169',
+			xfbml      : true,
+			version    : 'v2.8'
+		});
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<hr />
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" data-target="#details">Details</a></li>
+    <li><a data-toggle="tab" data-target="#comments">Comments</a></li>
+    <li><a data-toggle="tab" data-target="#directions">Directions</a></li>
+</ul>
+
+<div class="tab-content">
+	<div id="details" class="tab-pane fade in active">
+		<div class="livehero_content" style="background-image:url(../../../Content/images/match-bg.jpg); background-size:cover; background-position:center">
+			<div class="heromatch">
+				<div class="heromatch_col heromatch_col-left">
+					<img ng-src="../../../Content/images/teams/{{match.HomeTeamLogoUrl}}" alt="" class="heromatch_team-logo">
+					<div class="heromatch_team-text" ng-click="redirectToTeam(match.HomeTeamId)">
+						<div class="heromatch_team-name">
+							{{match.HomeTeamName}}
+						</div>
+					</div>
+				</div>
+				<div class="heromatch_col heromatch_col-center">
+					<div class="heromatch_status" ng-if="match.HomeGoalsCount != null">
+						Finished
+					</div>
+					<div class="heromatch_scores">
+						<div class="heromatch_score">
+							{{match.HomeGoalsCount}}
+						</div>
+						<div class="heromatch_score-dash">-</div>
+						<div class="heromatch_score">
+							{{match.AwayGoalsCount}}
+						</div>
+					</div>
+					<div class="heromatch_date">
+						{{match.Date | limitTo: 10}}
+					</div>
+					<div class="heromatch_date" ng-click="redirectToReferee(match.RefereeId)">
+						{{match.Referee}}
+					</div>
+					<div class="heromatch_stadium" ng-click="redirectToStadium(match.Stadium.Id)">
+						{{match.Stadium.Name}}
+					</div>
+				</div>
+				<div class="heromatch_col heromatch_col-right">
+					<div class="heromatch_team-text" ng-click="redirectToTeam(match.AwayTeamId)">
+						<div class="heromatch_team-name">
+							{{match.AwayTeamName}}
+						</div>
+					</div>
+					<img ng-src="../../../Content/images/teams/{{match.AwayTeamLogoUrl}}" alt="" class="heromatch_team-logo">
+				</div>
+				<hr style="border-top: 1px solid rgba(255,255,255,0.149)"/>
+			</div>
+			<div class="heromatch" style="height: auto; padding-bottom: 50px">
+				<div class="heromatch_col heromatch_col-left heromatch_scorer-left">
+					<div ng-repeat="goal in match.HomeGoals" ng-click="redirectToPlayer(goal.Footballer.Id)" ng-mouseover="setUrl(goal.Footballer)">
+						<div class="heromatch_scorer-name" popover-trigger="'mouseenter'" type="button" uib-popover-template="'tpl.html'">
+							<img ng-src="{{getIconUrl(goal.Type)}}" width="18" height="18"/>
+							{{goal.Time}} {{goal.Footballer.Name}}
+						</div>
+					</div>
+				</div>
+				<div class="heromatch_col heromatch_col-center">
+				</div>
+				<div class="heromatch_col heromatch_col-right" style="padding-right:7.25rem;">
+					<div ng-repeat="goal in match.AwayGoals"  ng-mouseover="setUrl(goal.Footballer)" ng-click="redirectToPlayer(goal.Footballer.Id)">
+						<div id="awayScorers" class="heromatch_scorer-name" popover-trigger="'mouseenter'" type="button" uib-popover-template="'tpl.html'">
+							<img ng-src="{{getIconUrl(goal.Type)}}" width="18" height="18" />
+							{{goal.Time}} {{goal.Footballer.Name}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="comments" class="tab-pane fade">
+		<div style="padding-top:10px;">
+			<div ng-repeat="comment in match.Comments">
+				<div>
+					<div style="font-size:12px; padding-bottom:5px;">Comment by: <i>{{comment.Username}}</i>. Date: {{comment.Date | date: 'dd-MM-yyyy HH:mm:ss'}}. Match rating: <span display-component-rating="{{comment.Rating}}"></span></div>
+					<div style="word-wrap:break-word">{{comment.Text}}</div>
+				</div>
+				<hr />
+			</div>
+			<div style="padding-top:50px">
+				<div>Your match rating: <span edit-component-rating="{{newComment.Rating}}"></span></div>
+				<textarea ng-model="newComment.Text" style="width: 100%; height: 300px"></textarea>
+				<button class="btn btn-default" ng-click="saveComment()">Save</button>
+			</div>
+		</div>
+	</div>
+	<div id="directions" class="tab-pane fade">
+		<br/>
+		<input class="input" id="originAddress" name="origin" width="250" ng-model="originAddress"
+		       onkeydown="if (event.keyCode == 13) document.getElementById('navBtn').click()">
+		<button id="navBtn" class="btn btn-default" ng-click="changeIt()">Search</button><br/><br />
+		<iframe id="mapFrame" width="600" height="450" frameborder="0" style="border:0"
+		        ng-src="{{url}}" allowfullscreen></iframe> <br/><br/>
+		<div class="fb-like"
+		     data-share="true"
+		     data-width="450"
+		     data-show-faces="true">
+		</div>
+	</div>
+</div>
+
+<script type="text/ng-template" id="tpl.html">
+	<div class="popover-content">
+		<div>
+			<img ng-src="../../../Content/images/players/{{PictureUrl}}" width="45" height="45"/>
+		</div>
+	</div>
+</script>

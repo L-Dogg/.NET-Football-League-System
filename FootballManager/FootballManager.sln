@@ -1,0 +1,257 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.Domain", "FootballManager.Domain\FootballManager.Domain.csproj", "{777DA61F-BCF7-4F32-98B2-D907896B4932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.Domain.UnitTests", "FootballManager.Domain.UnitTests\FootballManager.Domain.UnitTests.csproj", "{A081C3E8-9DDB-4153-B496-CF771C9ECDFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.Presentation", "FootballManager.Presentation\FootballManager.Presentation.csproj", "{31E3DF9E-C6A9-4734-812B-DBAF27C54457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.BusinessLayer", "FootballManager.ViewModel\FootballManager.BusinessLayer.csproj", "{BDF78C5E-A03D-4123-9223-13F05804FBF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{D89B00DA-279E-41D3-8954-215219163E7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.BusinessLayer.UnitTests", "FootballManager.ViewModel.UnitTests\FootballManager.BusinessLayer.UnitTests.csproj", "{06B8F8D4-FEC9-48A6-832F-73BCE611DFD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.AuthenticationLayer", "FootballManager.AuthenticationViewModel\FootballManager.AuthenticationLayer.csproj", "{DC451CE0-90CB-43B3-AD8C-11050D3DF1C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.AuthenticationUnitTests", "FoottballManager.AuthenticationViewModel.UnitTests\FootballManager.AuthenticationUnitTests.csproj", "{4A35B4B9-B7B5-4F34-97DB-738519E6CC29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.Presentation.UnitTests", "FootballManager.Presentation.UnitTests\FootballManager.Presentation.UnitTests.csproj", "{EF4B26FA-A7C4-478B-908D-68E6E745C487}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Football Manager", "Football Manager", "{0F40B7F4-904B-46DC-AD25-E2C4E82E719E}"
+	ProjectSection(SolutionItems) = preProject
+		adach_dziwulski_1.11.odt = adach_dziwulski_1.11.odt
+		adach_dziwulski_1.11.pdf = adach_dziwulski_1.11.pdf
+		adach_dziwulski_1.20.odt = adach_dziwulski_1.20.odt
+		adach_dziwulski_1.20.pdf = adach_dziwulski_1.20.pdf
+		adach_dziwulski_1.30.odt = adach_dziwulski_1.30.odt
+		adach_dziwulski_1.30.pdf = adach_dziwulski_1.30.pdf
+		adach_dziwulski_1.31.odt = adach_dziwulski_1.31.odt
+		adach_dziwulski_1.31.pdf = adach_dziwulski_1.31.pdf
+		adach_dziwulski_1.32.odt = adach_dziwulski_1.32.odt
+		adach_dziwulski_1.32.pdf = adach_dziwulski_1.32.pdf
+		adach_dziwulski_1.33.odt = adach_dziwulski_1.33.odt
+		adach_dziwulski_1.33.pdf = adach_dziwulski_1.33.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Referee App", "Referee App", "{79078543-C36B-4879-867E-248626A58E33}"
+	ProjectSection(SolutionItems) = preProject
+		adach_dziwulski_1.1.odt = adach_dziwulski_1.1.odt
+		adach_dziwulski_1.1.pdf = adach_dziwulski_1.1.pdf
+		adach_dziwulski__1.11.odt = adach_dziwulski__1.11.odt
+		adach_dziwulski__1.11.pdf = adach_dziwulski__1.11.pdf
+		adach_dziwulski__1.2.odt = adach_dziwulski__1.2.odt
+		adach_dziwulski__1.2.pdf = adach_dziwulski__1.2.pdf
+		UseCases.png = UseCases.png
+		UseCases.vsdx = UseCases.vsdx
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RefereeService", "RefereeService", "{57C3FE19-288B-4718-9A8A-166D42AC1874}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{bdf78c5e-a03d-4123-9223-13f05804fbf9}|FootballManager.ViewModel.dll;{777DA61F-BCF7-4F32-98B2-D907896B4932}|FootballManager.Domain.dll;{dc451ce0-90cb-43b3-ad8c-11050d3df1c0}|FootballManager.AuthenticationViewModel.dll;{a2cf8b48-aa6a-4247-9931-984aed9a9b3a}|RefereeServiceLibrary.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62518"
+		Debug.AspNetCompiler.PhysicalPath = "RefereeService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62518\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62518"
+		Release.AspNetCompiler.PhysicalPath = "RefereeService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62518\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62518"
+		SlnRelativePath = "RefereeService\"
+		DefaultWebSiteLanguage = "Visual C#"
+		StartServerOnDebug = "false"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.Referee.Presentation", "FootballManager.Referee.Presentation\FootballManager.Referee.Presentation.csproj", "{18B5A48C-2314-4C4A-A991-9E83DB6BFD1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{57C3FE19-288B-4718-9A8A-166D42AC1874} = {57C3FE19-288B-4718-9A8A-166D42AC1874}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.RefereeService.UnitTests", "FootballManager.RefereeService.UnitTests\FootballManager.RefereeService.UnitTests.csproj", "{61CD2699-A8C5-4D54-8772-4918B0EC476E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefereeServiceLibrary", "RefereeServiceLibrary\RefereeServiceLibrary.csproj", "{A2CF8B48-AA6A-4247-9931-984AED9A9B3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.Referee.Presentation.UnitTests", "FootballManager.Referee.Presentation.UnitTests\FootballManager.Referee.Presentation.UnitTests.csproj", "{81454D89-2CE9-40CE-A074-3BA10645BC16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A6F0B2EC-5BF9-4F3C-BD14-BBEF00734693}"
+	ProjectSection(SolutionItems) = preProject
+		Untitled 1.odp = Untitled 1.odp
+		Untitled 1.pdf = Untitled 1.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fan app", "Fan app", "{8A44EDFC-6057-4FBE-9E7E-3D5CA077665E}"
+	ProjectSection(SolutionItems) = preProject
+		adach_dziwulski__1.0.odt = adach_dziwulski__1.0.odt
+		FanApp_Auth_UseCases.png = FanApp_Auth_UseCases.png
+		FanApp_UseCases.png = FanApp_UseCases.png
+		FanApp_UseCases.vsdx = FanApp_UseCases.vsdx
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.Fans.Presentation", "FootballManager.Fans.Presentation\FootballManager.Fans.Presentation.csproj", "{D762B424-7EA1-468F-9516-C832146EE830}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.Web", "FootballManager.Web\FootballManager.Web.csproj", "{D95F340E-D2C2-4E3D-B992-F95747E4BDEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.Web.Tests", "FootballManager.Web.Tests\FootballManager.Web.Tests.csproj", "{8B10274F-91B1-4206-9F61-E0E721A34D1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{F79212E1-D3FE-4C75-BD36-D49B093B516B}"
+	ProjectSection(SolutionItems) = preProject
+		adach_dziwulski_fanapp__1.0.pdf = adach_dziwulski_fanapp__1.0.pdf
+		prezentacja3.odp = prezentacja3.odp
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{777DA61F-BCF7-4F32-98B2-D907896B4932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{777DA61F-BCF7-4F32-98B2-D907896B4932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{777DA61F-BCF7-4F32-98B2-D907896B4932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{777DA61F-BCF7-4F32-98B2-D907896B4932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A081C3E8-9DDB-4153-B496-CF771C9ECDFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A081C3E8-9DDB-4153-B496-CF771C9ECDFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A081C3E8-9DDB-4153-B496-CF771C9ECDFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A081C3E8-9DDB-4153-B496-CF771C9ECDFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E3DF9E-C6A9-4734-812B-DBAF27C54457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E3DF9E-C6A9-4734-812B-DBAF27C54457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E3DF9E-C6A9-4734-812B-DBAF27C54457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E3DF9E-C6A9-4734-812B-DBAF27C54457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF78C5E-A03D-4123-9223-13F05804FBF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF78C5E-A03D-4123-9223-13F05804FBF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF78C5E-A03D-4123-9223-13F05804FBF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF78C5E-A03D-4123-9223-13F05804FBF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B8F8D4-FEC9-48A6-832F-73BCE611DFD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B8F8D4-FEC9-48A6-832F-73BCE611DFD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B8F8D4-FEC9-48A6-832F-73BCE611DFD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B8F8D4-FEC9-48A6-832F-73BCE611DFD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC451CE0-90CB-43B3-AD8C-11050D3DF1C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC451CE0-90CB-43B3-AD8C-11050D3DF1C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC451CE0-90CB-43B3-AD8C-11050D3DF1C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC451CE0-90CB-43B3-AD8C-11050D3DF1C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A35B4B9-B7B5-4F34-97DB-738519E6CC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A35B4B9-B7B5-4F34-97DB-738519E6CC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A35B4B9-B7B5-4F34-97DB-738519E6CC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A35B4B9-B7B5-4F34-97DB-738519E6CC29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF4B26FA-A7C4-478B-908D-68E6E745C487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF4B26FA-A7C4-478B-908D-68E6E745C487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF4B26FA-A7C4-478B-908D-68E6E745C487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF4B26FA-A7C4-478B-908D-68E6E745C487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C3FE19-288B-4718-9A8A-166D42AC1874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C3FE19-288B-4718-9A8A-166D42AC1874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C3FE19-288B-4718-9A8A-166D42AC1874}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C3FE19-288B-4718-9A8A-166D42AC1874}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{18B5A48C-2314-4C4A-A991-9E83DB6BFD1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18B5A48C-2314-4C4A-A991-9E83DB6BFD1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18B5A48C-2314-4C4A-A991-9E83DB6BFD1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18B5A48C-2314-4C4A-A991-9E83DB6BFD1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61CD2699-A8C5-4D54-8772-4918B0EC476E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CD2699-A8C5-4D54-8772-4918B0EC476E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CD2699-A8C5-4D54-8772-4918B0EC476E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CD2699-A8C5-4D54-8772-4918B0EC476E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2CF8B48-AA6A-4247-9931-984AED9A9B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2CF8B48-AA6A-4247-9931-984AED9A9B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2CF8B48-AA6A-4247-9931-984AED9A9B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2CF8B48-AA6A-4247-9931-984AED9A9B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81454D89-2CE9-40CE-A074-3BA10645BC16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81454D89-2CE9-40CE-A074-3BA10645BC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81454D89-2CE9-40CE-A074-3BA10645BC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81454D89-2CE9-40CE-A074-3BA10645BC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D762B424-7EA1-468F-9516-C832146EE830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D762B424-7EA1-468F-9516-C832146EE830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D762B424-7EA1-468F-9516-C832146EE830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D762B424-7EA1-468F-9516-C832146EE830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D95F340E-D2C2-4E3D-B992-F95747E4BDEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D95F340E-D2C2-4E3D-B992-F95747E4BDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D95F340E-D2C2-4E3D-B992-F95747E4BDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D95F340E-D2C2-4E3D-B992-F95747E4BDEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B10274F-91B1-4206-9F61-E0E721A34D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B10274F-91B1-4206-9F61-E0E721A34D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B10274F-91B1-4206-9F61-E0E721A34D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B10274F-91B1-4206-9F61-E0E721A34D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F40B7F4-904B-46DC-AD25-E2C4E82E719E} = {D89B00DA-279E-41D3-8954-215219163E7E}
+		{79078543-C36B-4879-867E-248626A58E33} = {D89B00DA-279E-41D3-8954-215219163E7E}
+		{A6F0B2EC-5BF9-4F3C-BD14-BBEF00734693} = {79078543-C36B-4879-867E-248626A58E33}
+		{8A44EDFC-6057-4FBE-9E7E-3D5CA077665E} = {D89B00DA-279E-41D3-8954-215219163E7E}
+		{F79212E1-D3FE-4C75-BD36-D49B093B516B} = {8A44EDFC-6057-4FBE-9E7E-3D5CA077665E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 17
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://orgiele.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FootballManager.Domain\\FootballManager.Domain.csproj
+		SccProjectName1 = FootballManager.Domain
+		SccLocalPath1 = FootballManager.Domain
+		SccProjectUniqueName2 = FootballManager.Domain.UnitTests\\FootballManager.Domain.UnitTests.csproj
+		SccProjectName2 = FootballManager.Domain.UnitTests
+		SccLocalPath2 = FootballManager.Domain.UnitTests
+		SccProjectUniqueName3 = FootballManager.Presentation\\FootballManager.Presentation.csproj
+		SccProjectName3 = FootballManager.Presentation
+		SccLocalPath3 = FootballManager.Presentation
+		SccProjectUniqueName4 = FoottballManager.AuthenticationViewModel.UnitTests\\FootballManager.AuthenticationUnitTests.csproj
+		SccProjectName4 = FoottballManager.AuthenticationViewModel.UnitTests
+		SccLocalPath4 = FoottballManager.AuthenticationViewModel.UnitTests
+		SccProjectUniqueName5 = FootballManager.Presentation.UnitTests\\FootballManager.Presentation.UnitTests.csproj
+		SccProjectName5 = FootballManager.Presentation.UnitTests
+		SccLocalPath5 = FootballManager.Presentation.UnitTests
+		SccProjectUniqueName6 = FootballManager.ViewModel\\FootballManager.BusinessLayer.csproj
+		SccProjectName6 = FootballManager.ViewModel
+		SccLocalPath6 = FootballManager.ViewModel
+		SccProjectUniqueName7 = FootballManager.ViewModel.UnitTests\\FootballManager.BusinessLayer.UnitTests.csproj
+		SccProjectName7 = FootballManager.ViewModel.UnitTests
+		SccLocalPath7 = FootballManager.ViewModel.UnitTests
+		SccProjectUniqueName8 = FootballManager.AuthenticationViewModel\\FootballManager.AuthenticationLayer.csproj
+		SccProjectName8 = FootballManager.AuthenticationViewModel
+		SccLocalPath8 = FootballManager.AuthenticationViewModel
+		SccWebProject9 = true
+		SccProjectUniqueName9 = RefereeService
+		SccProjectName9 = RefereeService
+		SccLocalPath9 = RefereeService
+		SccProjectEnlistmentChoice9 = 2
+		SccProjectUniqueName10 = FootballManager.Referee.Presentation\\FootballManager.Referee.Presentation.csproj
+		SccProjectName10 = FootballManager.Referee.Presentation
+		SccLocalPath10 = FootballManager.Referee.Presentation
+		SccProjectUniqueName11 = FootballManager.RefereeService.UnitTests\\FootballManager.RefereeService.UnitTests.csproj
+		SccProjectName11 = FootballManager.RefereeService.UnitTests
+		SccLocalPath11 = FootballManager.RefereeService.UnitTests
+		SccProjectUniqueName12 = RefereeServiceLibrary\\RefereeServiceLibrary.csproj
+		SccProjectName12 = RefereeServiceLibrary
+		SccLocalPath12 = RefereeServiceLibrary
+		SccProjectUniqueName13 = FootballManager.Referee.Presentation.UnitTests\\FootballManager.Referee.Presentation.UnitTests.csproj
+		SccProjectName13 = FootballManager.Referee.Presentation.UnitTests
+		SccLocalPath13 = FootballManager.Referee.Presentation.UnitTests
+		SccProjectUniqueName14 = FootballManager.Fans.Presentation\\FootballManager.Fans.Presentation.csproj
+		SccProjectName14 = FootballManager.Fans.Presentation
+		SccLocalPath14 = FootballManager.Fans.Presentation
+		SccProjectUniqueName15 = FootballManager.Web\\FootballManager.Web.csproj
+		SccProjectName15 = FootballManager.Web
+		SccLocalPath15 = FootballManager.Web
+		SccProjectUniqueName16 = FootballManager.Web.Tests\\FootballManager.Web.Tests.csproj
+		SccProjectName16 = FootballManager.Web.Tests
+		SccLocalPath16 = FootballManager.Web.Tests
+	EndGlobalSection
+EndGlobal

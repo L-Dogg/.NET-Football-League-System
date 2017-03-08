@@ -1,0 +1,57 @@
+﻿<hr />
+<div>
+    <angucomplete-alt id="referees"
+                      placeholder="Search referees"
+                      pause="200"
+                      selected-object="getRefereeData"
+                      remote-url="/api/referees/list/"
+                      remote-url-data-field=""
+                      title-field="Name"
+                      input-class="form-control form-control-small"
+                      match-class="red"
+                      text-searching="Searching referees..."
+                      text-no-results="No referees found matching your filter." />
+</div>
+<hr />
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" data-target="#personalData">Personal Data</a></li>
+    <li><a data-toggle="tab" data-target="#matches">Matches</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="personalData" class="tab-pane fade in active">
+	    <img style="margin-bottom: 0.79em" ng-src="../../../Content/images/referees/{{referee.PictureUrl}}" alt=""
+			 height="200" width="200">
+        <p><span style="font-weight: bold;">Name: </span>{{referee.FirstName}} </p>
+        <p><span style="font-weight: bold;">Surname: </span>{{referee.Surname}}</p>
+        <p><span style="font-weight: bold;">Date of birth:</span> {{referee.BirthDate | limitTo: 10}}</p>
+    </div>
+    <div id="matches" class="tab-pane fade">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Referee's matches</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Home Team</th>
+                        <th>Away Team</th>
+                        <th>Date</th>
+                        <th>Stadium</th>
+                        <th>Home score</th>
+                        <th>Away score</th>
+                    </tr>
+                    <tr ng-repeat="match in referee.Matches" ng-click="redirectToMatch(match)">
+                        <td width="20%">{{match.HomeTeamName}}</td>
+                        <td width="20%">{{match.AwayTeamName}}</td>
+                        <td width="14%">{{match.Date | limitTo: 10}}</td>
+                        <td width="20%">{{match.Stadium.Name}}</td>
+                        <td width="13%">{{match.HomeGoalsCount}}</td>
+                        <td width="13%">{{match.AwayGoalsCount}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

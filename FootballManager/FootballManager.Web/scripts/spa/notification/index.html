@@ -1,0 +1,29 @@
+﻿<hr />
+<div style="padding-bottom:10px">Choose team to sign up for it's notifications</div>
+<div>
+    <angucomplete-alt id="notificationTeams"
+                      placeholder="Search teams"
+                      pause="200"
+                      selected-object="selectedTeam"
+                      remote-url="/api/team/list/"
+                      remote-url-data-field=""
+                      title-field="Name"
+                      input-class="form-control form-control-small"
+                      match-class="red"
+                      text-searching="Searching teams.."
+                      text-no-results="No teams found matching your filter." />
+</div>
+<hr />
+
+<div>
+    <table class="table table-striped">
+        <tr>
+            <th>Team</th>
+            <th width="100px">Delete</th>
+        </tr>
+        <tr ng-repeat="notification in notifications">
+            <td>{{notification.Team.Name}}</td>
+            <td width="100px"><button ng-click="removeNotification(notification)">X</button></td>
+        </tr>
+    </table>
+</div>

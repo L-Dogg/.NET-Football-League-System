@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RefereeServiceLibrary.DTOs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RefereeServiceLibrary.DTOs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62518/RefereeService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FootballManager.Domain.Entity.Enums" />
+  <xs:complexType name="PlayerListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerListItem" nillable="true" type="tns:PlayerListItem" />
+  <xs:complexType name="ArrayOfMatchListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchListItem" nillable="true" type="tns:MatchListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchListItem" nillable="true" type="tns:ArrayOfMatchListItem" />
+  <xs:complexType name="MatchListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AwayTeamGoals" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AwayTeamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HomeTeamGoals" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HomeTeamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchListItem" nillable="true" type="tns:MatchListItem" />
+  <xs:complexType name="MatchDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attendance" type="xs:int" />
+      <xs:element minOccurs="0" name="AwayTeamGoals" nillable="true" type="tns:ArrayOfGoalDTO" />
+      <xs:element minOccurs="0" name="AwayTeamId" type="xs:int" />
+      <xs:element minOccurs="0" name="AwayTeamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AwayTeamPlayers" nillable="true" type="tns:ArrayOfPlayerListItem" />
+      <xs:element minOccurs="0" name="AwayTeamScore" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HomeTeamGoals" nillable="true" type="tns:ArrayOfGoalDTO" />
+      <xs:element minOccurs="0" name="HomeTeamId" type="xs:int" />
+      <xs:element minOccurs="0" name="HomeTeamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeTeamPlayers" nillable="true" type="tns:ArrayOfPlayerListItem" />
+      <xs:element minOccurs="0" name="HomeTeamScore" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Referee" nillable="true" type="tns:RefereeDTO" />
+      <xs:element minOccurs="0" name="Stadium" nillable="true" type="tns:StadiumDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchDTO" nillable="true" type="tns:MatchDTO" />
+  <xs:complexType name="ArrayOfGoalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GoalDTO" nillable="true" type="tns:GoalDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGoalDTO" nillable="true" type="tns:ArrayOfGoalDTO" />
+  <xs:complexType name="GoalDTO">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FootballManager.Domain.Entity.Enums" minOccurs="0" name="GoalType" type="q1:GoalType" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Scorer" nillable="true" type="tns:PlayerListItem" />
+      <xs:element minOccurs="0" name="TeamId" type="xs:int" />
+      <xs:element minOccurs="0" name="Time" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GoalDTO" nillable="true" type="tns:GoalDTO" />
+  <xs:complexType name="ArrayOfPlayerListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayerListItem" nillable="true" type="tns:PlayerListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayerListItem" nillable="true" type="tns:ArrayOfPlayerListItem" />
+  <xs:complexType name="RefereeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RefereeDTO" nillable="true" type="tns:RefereeDTO" />
+  <xs:complexType name="StadiumDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:AddressDTO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StadiumDTO" nillable="true" type="tns:StadiumDTO" />
+  <xs:complexType name="AddressDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDTO" nillable="true" type="tns:AddressDTO" />
+</xs:schema>
