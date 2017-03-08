@@ -11,8 +11,8 @@ This system consists of 3 apps:
   * Unity
 * **Referee Application** - distributed application for league referees, using WCF API referee can input match data (result, scorers, etc.). Moreover, commute directions are provided using Bing Maps. 
   * WCF
-* **Fan Application** - web appliaction for league fans: users can log in using system account or using existing Facebook account. They can sign up for match notifications, rate matches, browse multiple rankings and stats. Commute directions are provided using Google Maps.
-  * ASP.NET
+* **Fan Application** - web single page appliaction for league fans: users can log in using system account or using existing Facebook account. They can sign up for match notifications, rate matches, browse multiple rankings and stats. Commute directions are provided using Google Maps.
+  * ASP.NET WebAPI
   * Autofac
   * Antlr
   * AutoMapper
