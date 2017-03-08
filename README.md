@@ -1,6 +1,8 @@
 # .NET-Football-League-System
 .NET elective course, 5th semester (2017), by me and andrzej_badgirl
 
+(Disclaimer: this project was developed using TFS so no commit (checkin) history is available here)
+
 This system consists of 3 apps:
 * **Football Manager** - CRUD application, which allows system administrator to manipulate system objects (players, teams, referees, etc.)
   * WPF
