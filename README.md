@@ -1,5 +1,5 @@
 # .NET-Football-League-System
-.NET elective course, 5th semester (2017), by me and andrzej_badgirl
+.NET elective course, 5th semester (2017), by me and [andrzejbg](https://github.com/andrzejbg)
 
 (Disclaimer: this project was developed using TFS so no commit (checkin) history is available here)
 
